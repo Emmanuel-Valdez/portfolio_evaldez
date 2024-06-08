@@ -6,31 +6,30 @@ import location_icon from '../../assets/location_icon.svg';
 import call_icon from '../../assets/call_icon.svg';
 
 const Contact = () => {
-  const [result, setResult] = React.useState("");
-
+  const [result, setResult] = React.useState('');
+  const mailKey = import.meta.env.VITE_MAIL_KEY;
   const onSubmit = async (event) => {
     event.preventDefault();
-    setResult("Sending....");
+    setResult('Sending....');
     const formData = new FormData(event.target);
 
-    formData.append("access_key", "9d9da0a6-b14a-420a-8e7f-b16e124d7ba5");
+    formData.append('access_key', mailKey);
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData,
     });
 
     const data = await response.json();
 
     if (data.success) {
-      setResult("Form Submitted Successfully");
+      setResult('Form Submitted Successfully');
       event.target.reset();
-
     } else {
-      console.log("Error", data);
-      setResult(data.message);
+      // console.log('Error', data);
+      // setResult(data.message);
     }
-    alert(data.message)
+    alert(data.message);
   };
 
   return (
