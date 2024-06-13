@@ -33,7 +33,7 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="contact">
+    <section id="contact" className="contact">
       <div className="contact-title">
         <h1>Get in touch</h1>
         <img src={theme_pattern} alt="" />
@@ -77,7 +77,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -17,7 +17,7 @@ const Navbar = () => {
     menuRef.current.style.right = '-350px';
   };
   return (
-    <div className="navbar">
+    <nav className="navbar">
       <img src={logo} alt="" />
       <img src={menu_open} onClick={openMenu} className="nav-mob-open" alt="" />
       <ul ref={menuRef} className="nav-menu">
@@ -63,7 +63,7 @@ const Navbar = () => {
           Connect With Me
         </AnchorLink>
       </div>
-    </div>
+    </nav>
   );
 };
 
